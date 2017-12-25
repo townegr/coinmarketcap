@@ -1,0 +1,83 @@
+
+nav ul {
+  margin-top: 15px;
+}
+
+nav li {
+  list-style: none;
+  margin-left: -45px;
+  padding: 15px;
+}
+
+.box-out {
+  background: #f9f9f9;
+  height: 432px;
+  width: 15%;
+  position: fixed;
+  top: 66px;
+  left: 0px;
+  margin: 0;
+  border: 1px solid #ddd;
+  -webkit-transition: .5s ease-out;
+  -moz-transition: .5s ease-out;
+  -o-transition: .5s ease-out;
+  -ms-transition: .5s ease-out;
+  transition: .5s ease-out;
+}
+
+.box-in {
+  margin: 0 0 0 -195;
+}
+
+.menu-btn {
+  position: absolute;
+  top: 190px;
+  left: 200px;
+  width: 30px;
+  height: 30px;
+  background: url(http://www.movingpixelsdesign.com/codepen/Chevron_btn-left.png) no-repeat;
+  background-size: cover;
+  cursor: pointer;
+}
+
+.menu-btn:hover {
+  -moz-opacity: 0.8;
+  opacity: 0.8;
+}
+
+.menu-btn-left {
+  background: url(http://www.movingpixelsdesign.com/codepen/Chevron_btn-right.png) no-repeat;
+}
+
+.filter-section {
+  margin: 10 30 0 10;
+}
+
+.outer-container {
+  width: 100%;
+  margin-top: 25px;
+}
+
+.inner-container {
+  display: table;
+  width: 65%;
+  margin: 0 auto;
+}
+
+
+.range {
+  margin-bottom: 5px;
+}
+
+.left-handle {
+  float: left;
+}
+
+.right-handle {
+  text-align: right;
+}
+
+.filter-section {
+  text-align: center;
+  margin-bottom: 50px;
+}

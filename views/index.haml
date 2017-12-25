@@ -1,0 +1,58 @@
+%html
+  %head
+    %link{rel: 'stylesheet', type: 'text/css', href: 'public/stylesheets/jquery_ui.css'}
+    %link{rel: 'stylesheet', type: 'text/css', href: 'public/stylesheets/bootstrap.css'}
+    %link{rel: 'stylesheet', type: 'text/css', href: 'public/stylesheets/datatables.css'}
+    %link{rel: 'stylesheet', type: 'text/css', href: 'assets/stylesheets/app.css'}
+  %body
+    .outer-container
+      %nav
+        .box-out
+          .menu-btn
+          %ul
+            %li
+              .filter-container
+                #filter-section-1.filter-section{data: {column: 3}}
+                  %label Price
+                  .range{data: {min: @min_price, max: @max_price}}
+                    .left-handle
+                    .right-handle
+                  .slider
+                #filter-section-2.filter-section{data: {column: 4}}
+                  %label Volume
+                  .range{data: {min: @min_vol, max: @max_vol}}
+                    .left-handle
+                    .right-handle
+                  .slider
+                #filter-section-3.filter-section{data: {column: 5}}
+                  %label Market Cap
+                  .range{data: {min: @min_cap, max: @max_cap}}
+                    .left-handle
+                    .right-handle
+                  .slider
+
+      .inner-container
+        %table#datatable{class: 'table table-striped table-bordered', style: 'cellspacing: 0; width: 100%;'}
+          %thead
+            %tr
+              %th #
+              %th Name
+              %th Symbol
+              %th Price (USD)
+              %th Volume (USD)
+              %th Market Cap (USD)
+          %tbody
+            - response.each do |row|
+              %tr
+                %td= row['rank']
+                %td= row['name']
+                %td= row['symbol']
+                %td= row['price_usd'].to_currency
+                %td= row['24h_volume_usd'].to_currency(no_cents: true)
+                %td= row['market_cap_usd'].to_currency(no_cents: true)
+
+      %script{src: 'public/javascripts/jquery.js'}
+      %script{src: 'public/javascripts/jquery_ui.js'}
+      %script{src: 'public/javascripts/datatables.js'}
+      %script{src: 'public/javascripts/bootstrap.js'}
+      %script{src: 'assets/javascripts/app.js'}

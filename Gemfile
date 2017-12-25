@@ -7,8 +7,14 @@ ruby '2.4.2'
 gem 'rubygems-update'
 gem 'bundler'
 gem 'sinatra'
-gem 'rest-open-uri'
+gem 'rest-client'
 gem 'json'
 gem 'thin'
 gem 'shotgun'
 gem 'haml'
+gem 'money'
+
+# Development
+group :development, :test do
+  gem 'pry'
+end
