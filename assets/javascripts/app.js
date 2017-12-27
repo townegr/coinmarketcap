@@ -1,4 +1,3 @@
-
 $('#datatable').DataTable({
   columnDefs: [
     {orderable: false, targets: 0}
@@ -25,8 +24,8 @@ var displayRange = function(obj, ui) {
     handles[$el.data('handle')] = val
   })
   range = $el.parent().prev()
-  range.find('.left-handle').html(handles['left'] + '%').css($el.position())
-  range.find('.right-handle').html(handles['right'] + '%').css($el.position())
+  range.find('.left-handle').html(handles['left'] + '%')
+  range.find('.right-handle').html(handles['right'] + '%')
 }
 
 var updateSliderValue = function(event, ui) {

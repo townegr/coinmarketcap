@@ -1,15 +1,21 @@
 %html
   %head
-    %link{rel: 'stylesheet', type: 'text/css', href: 'public/stylesheets/jquery_ui.css'}
-    %link{rel: 'stylesheet', type: 'text/css', href: 'public/stylesheets/bootstrap.css'}
-    %link{rel: 'stylesheet', type: 'text/css', href: 'public/stylesheets/datatables.css'}
-    %link{rel: 'stylesheet', type: 'text/css', href: 'assets/stylesheets/app.css'}
+    %link{rel: 'stylesheet', type: 'text/css', href: '../public/stylesheets/jquery_ui.css'}
+    %link{rel: 'stylesheet', type: 'text/css', href: '../public/stylesheets/bootstrap.css'}
+    %link{rel: 'stylesheet', type: 'text/css', href: '../public/stylesheets/datatables.css'}
+    %link{rel: 'stylesheet', type: 'text/css', href: '../assets/stylesheets/app.css'}
   %body
     .outer-container
       %nav
         .box-out
           .menu-btn
           %ul
+            %li
+              - if defined? prev
+                %a{href: "/coins/#{prev}"} Previous 100
+              - if defined? start
+                %a{href: "/coins/#{start}"} Next 100
+              %a{href: '/coins/all'} View All
             %li
               .filter-container
                 #filter-section-1.filter-section{data: {column: 3}}
@@ -42,7 +48,7 @@
               %th Volume (USD)
               %th Market Cap (USD)
           %tbody
-            - response.each do |row|
+            - data.each do |row|
               %tr
                 %td= row['rank']
                 %td= row['name']
@@ -51,8 +57,8 @@
                 %td= row['24h_volume_usd'].to_currency(no_cents: true)
                 %td= row['market_cap_usd'].to_currency(no_cents: true)
 
-      %script{src: 'public/javascripts/jquery.js'}
-      %script{src: 'public/javascripts/jquery_ui.js'}
-      %script{src: 'public/javascripts/datatables.js'}
-      %script{src: 'public/javascripts/bootstrap.js'}
-      %script{src: 'assets/javascripts/app.js'}
+      %script{src: '../public/javascripts/jquery.js'}
+      %script{src: '../public/javascripts/jquery_ui.js'}
+      %script{src: '../public/javascripts/datatables.js'}
+      %script{src: '../public/javascripts/bootstrap.js'}
+      %script{src: '../assets/javascripts/app.js'}
